@@ -1,0 +1,71 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="glfw3.dll" />
+    <None Remove="NLua.dll" />
+    <None Remove="res\audio\music\event-horizon.wav" />
+    <None Remove="res\shaders\fragmentShader.glsl" />
+    <None Remove="res\shaders\vertexShader.glsl" />
+    <None Remove="res\textures\Demopan powaaaaaah.gif" />
+    <None Remove="res\textures\super.gif" />
+    <None Remove="res\textures\wall.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<EmbeddedResource Include="glfw3.dll">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</EmbeddedResource>
+	<EmbeddedResource Include="NLua.dll">
+	  <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</EmbeddedResource>
+	<EmbeddedResource Include="res\audio\music\event-horizon.wav">
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</EmbeddedResource>
+	<EmbeddedResource Include="res\shaders\fragmentShader.glsl">
+	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	</EmbeddedResource>
+    <EmbeddedResource Include="res\shaders\vertexShader.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="res\textures\Demopan powaaaaaah.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="res\textures\super.gif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="res\textures\wall.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="KeraLua" Version="1.2.15" />
+    <PackageReference Include="System.Drawing.Common" Version="5.0.2" />
+    <PackageReference Include="System.Reflection" Version="4.3.0" />
+    <PackageReference Include="System.Windows.Extensions" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="res\audio\sfx\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="NLua">
+      <HintPath>NLua.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
